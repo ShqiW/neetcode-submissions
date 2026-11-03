@@ -1,0 +1,21 @@
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        n = len(matrix)
+        for i in range(n):
+            for j in range(i, n):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+        
+        for row in matrix:
+            self.reverse(row)
+
+    
+
+
+    def reverse(self, arr):
+        n = len(arr)
+        i, j = 0, n-1
+        while i < j:
+            arr[i], arr[j] = arr[j], arr[i]
+            i += 1
+            j -= 1
+    
